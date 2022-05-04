@@ -1,0 +1,72 @@
+<style>
+    {% include "template1.css" %}
+</style>
+<div class="container">
+    <div class="invoice_wrapper">
+        <div class="row-top">
+            <div class="invoice-logo-wrapper">
+                <div class="logo-sec">
+                    <img src="{% include "logo_laos" %}" alt="code logo" />
+                </div>
+                <div class="invoice-sec">
+                    <p class="invoice-no">
+                        <span class="bold">Invoice#:</span>
+                        <span>348666</span>
+                    </p>
+                    <p class="created-date">
+                        <span class="bold">Created:</span>
+                        <span>Wed Oct 3, 2018</span>
+                    </p>
+                    <p class="due-date">
+                        <span class="bold">Due:</span>
+                        <span>Wed Oct 10, 2018</span>
+                    </p>
+                </div>
+            </div>
+            <div class="invoice-bill-address-wrapper">
+                <div class="invoice-address-sec">
+                    <p>Bill To</p> 
+                    <span>
+                    123 walls street, Townhall<br/>
+                    +111 222345667
+                    </span>
+                </div>
+                <div class="invoice-detail-wrapper">
+                    <p>Sam Corp</p>
+                    <span>Sam Sam sam@example.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="row-middle">
+            <div class="main-table">
+                <div class="table-header">
+                    <div class="row">
+                        <div class="bold col col-item-code">Item code</div>
+                        <div class="bold col col-item-name">Item name</div>
+                        <div class="bold col col-num-pack">No. of packs</div>
+                        <div class="bold col col-packsize">Packsize</div>
+                        <div class="bold col col-subtotal">Subtotal</div>
+                    </div>
+                </div>
+                <div class="table-body">
+                    <div class="row">
+                        <div class="col col-item-code">ARTL20TC1</div>
+                        <div class="col col-item-name">Artemether/Lumefantrine 20/120 mg Dispersible Tablet 6 x 1</div>
+                        <div class="col col-num-pack">10</div>
+                        <div class="col col-packsize">30</div>
+                        <div class="col col-subtotal">300</div>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice-total-wrapper">
+                <div class="offset-to-left"></div>
+                <div class="total-sec">
+                    <p class="bold">
+                        <span>Total:</span>
+                        <span>$7500</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
