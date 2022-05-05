@@ -1,5 +1,5 @@
 <style>
-    {% include "template1.css" %}
+    {% include "design.css" %}
 </style>
 <div class="container">
     <div class="invoice_wrapper">
@@ -11,24 +11,24 @@
                 <div class="invoice-sec">
                     <p class="invoice-no">
                         <span class="bold">Invoice#:</span>
-                        <span>348666</span>
+                        <span>{{ data.invoice.invoiceNumber }}</span>
                     </p>
                     <p class="created-date">
                         <span class="bold">Created:</span>
-                        <span>Wed Oct 3, 2018</span>
+                        <span>{{ data.invoice.createdDatetime | date(format="%Y-%m-%d") }}</span>
                     </p>
                     <p class="due-date">
                         <span class="bold">Due:</span>
-                        <span>Wed Oct 10, 2018</span>
+                        <span>{{ data.invoice.shippedDatetime | date(format="%Y-%m-%d") }}</span>
                     </p>
                 </div>
             </div>
             <div class="invoice-bill-address-wrapper">
                 <div class="invoice-address-sec">
-                    <p>Bill To</p> 
+                    <p>{{ data.invoice.otherPartyName }}</p> 
                     <span>
-                    123 walls street, Townhall<br/>
-                    +111 222345667
+                        12345 Sunny Road<br>
+                        Sunnyville, CA 12345
                     </span>
                 </div>
                 <div class="invoice-detail-wrapper">
@@ -49,13 +49,16 @@
                     </div>
                 </div>
                 <div class="table-body">
+                    {% for line in data.invoice.lines.nodes -%}
                     <div class="row">
-                        <div class="col col-item-code">ARTL20TC1</div>
-                        <div class="col col-item-name">Artemether/Lumefantrine 20/120 mg Dispersible Tablet 6 x 1</div>
-                        <div class="col col-num-pack">10</div>
-                        <div class="col col-packsize">30</div>
-                        <div class="col col-subtotal">300</div>
+                        {% set subtotal=line.packSize * line.numberOfPacks %}
+                        <div class="col col-item-code">{{ line.itemCode }}</div>
+                        <div class="col col-item-name">{{ line.itemName }}</div>
+                        <div class="col col-num-pack">{{ line.numberOfPacks }}</div>
+                        <div class="col col-packsize">{{ line.packSize }}</div>
+                        <div class="col col-subtotal">{{ subtotal }}</div>
                     </div>
+                    {%- endfor %}
                 </div>
             </div>
             <div class="invoice-total-wrapper">
@@ -63,7 +66,7 @@
                 <div class="total-sec">
                     <p class="bold">
                         <span>Total:</span>
-                        <span>$7500</span>
+                        <span>{{ data.invoice.pricing.totalAfterTax }}</span>
                     </p>
                 </div>
             </div>
