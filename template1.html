@@ -1,0 +1,75 @@
+<style>
+    {% include "design.css" %}
+</style>
+<div class="container">
+    <div class="invoice_wrapper">
+        <div class="row-top">
+            <div class="invoice-logo-wrapper">
+                <div class="logo-sec">
+                    <img src="{% include "logo_laos" %}" alt="code logo" />
+                </div>
+                <div class="invoice-sec">
+                    <p class="invoice-no">
+                        <span class="bold">Invoice#:</span>
+                        <span>{{ data.invoice.invoiceNumber }}</span>
+                    </p>
+                    <p class="created-date">
+                        <span class="bold">Created:</span>
+                        <span>{{ data.invoice.createdDatetime | date(format="%Y-%m-%d") }}</span>
+                    </p>
+                    <p class="due-date">
+                        <span class="bold">Due:</span>
+                        <span>{{ data.invoice.shippedDatetime | date(format="%Y-%m-%d") }}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="invoice-bill-address-wrapper">
+                <div class="invoice-address-sec">
+                    <p>{{ data.invoice.otherPartyName }}</p> 
+                    <span>
+                        12345 Sunny Road<br>
+                        Sunnyville, CA 12345
+                    </span>
+                </div>
+                <div class="invoice-detail-wrapper">
+                    <p>Sam Corp</p>
+                    <span>Sam Sam sam@example.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="row-middle">
+            <div class="main-table">
+                <div class="table-header">
+                    <div class="row">
+                        <div class="bold col col-item-code">Item code</div>
+                        <div class="bold col col-item-name">Item name</div>
+                        <div class="bold col col-num-pack">No. of packs</div>
+                        <div class="bold col col-packsize">Packsize</div>
+                        <div class="bold col col-subtotal">Subtotal</div>
+                    </div>
+                </div>
+                <div class="table-body">
+                    {% for line in data.invoice.lines.nodes -%}
+                    <div class="row">
+                        {% set subtotal=line.packSize * line.numberOfPacks %}
+                        <div class="col col-item-code">{{ line.itemCode }}</div>
+                        <div class="col col-item-name">{{ line.itemName }}</div>
+                        <div class="col col-num-pack">{{ line.numberOfPacks }}</div>
+                        <div class="col col-packsize">{{ line.packSize }}</div>
+                        <div class="col col-subtotal">{{ subtotal }}</div>
+                    </div>
+                    {%- endfor %}
+                </div>
+            </div>
+            <div class="invoice-total-wrapper">
+                <div class="offset-to-left"></div>
+                <div class="total-sec">
+                    <p class="bold">
+                        <span>Total:</span>
+                        <span>{{ data.invoice.pricing.totalAfterTax }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

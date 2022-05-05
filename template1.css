@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+}
+
+.bold{
+	font-weight: 900;
+}
+
+.row-middle {
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+.invoice_wrapper {
+    max-width: 100%;
+    width: 800px;
+}
+
+.invoice_wrapper .row-top .invoice-logo-wrapper,
+.invoice-wrapper .row-top .invoice-bill-address-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.invoice-wrapper .row-top .logo-sec {
+    display: flex;
+    align-items: center;
+}
+
+.invoice_wrapper .row-top .invoice-sec,
+.invoice_wrapper .row-top .invoice-bill-address-wrapper .invoice-detail-wrapper {
+	text-align: center;
+}
+
+.invoice_wrapper .row-top .invoice-sec .invoice-no, .created-date,
+.invoice_wrapper .row-top .invoice-sec .due-date {
+	display: flex;
+	width: 100%;
+}
+
+.invoice_wrapper .row-top .invoice-sec .invoice-no, .created-date span:first-child,
+.invoice_wrapper .row-top .invoice-sec .due-date span:first-child {
+	width: 60px;
+	text-align: left;
+}
+
+.invoice_wrapper .row-top .invoice-sec .invoice-no, .created-date span:last-child,
+.invoice_wrapper .row-top .invoice-sec .due-date span:last-child {
+	width: calc(100% - 60px);
+}
+
+.invoice_wrapper .row-middle .main-table .table-header {
+    border-bottom: 1px solid black;
+}
+
+.invoice_wrapper .row-middle .main-table .table-header .row {
+	font-size: 16px;
+	border-bottom: 0px;	
+}
+
+.invoice_wrapper .row-middle .main-table .row {
+	display: flex;
+}
+
+.invoice_wrapper .row-middle .main-table .row .col {
+	padding: 10px;
+}
+.invoice_wrapper .row-middle .main-table .row .col-item-code {
+    width: 10%;
+}
+.invoice_wrapper .row-middle .main-table .row .col-item-name {
+    width: 45%;
+}
+.invoice_wrapper .row-middle .main-table .row .col-num-pack {
+    width: 15%;
+    text-align: right;
+}
+.invoice_wrapper .row-middle .main-table .row .col-packsize {
+    width: 15%;
+    text-align: right;
+}
+.invoice_wrapper .row-middle .main-table .row .col-subtotal {
+    width: 15%;
+    text-align: right;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0 30px;
+	align-items: flex-end;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper .offset-to-left{
+	padding-left: 30px;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper .total-sec{
+	width: 30%;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper .total-sec p{
+	display: flex;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper .total-sec p span:first-child{
+	width: 60%;
+    padding-left: 70px;
+}
+
+.invoice_wrapper .row-middle .invoice-total-wrapper .total-sec p span:last-child{
+	width: 40%;
+    padding-right: 10px;
+	text-align: right;
+}
+
