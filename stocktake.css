@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+}
+
+.bold {
+	font-weight: 900;
+}
+
+.main-table {
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.stocktake-wrapper {
+    max-width: 100%;
+    width: 800px;
+}
+
+.stocktake-wrapper .main-table .table-header {
+    border-bottom: 0.5px solid black;
+}
+
+.stocktake-wrapper .main-table .table-header .row {
+	font-size: 14px;
+	border-bottom: 0px;	
+}
+
+.stocktake-wrapper .main-table .row {
+	display: flex;
+}
+
+.stocktake-wrapper .main-table .row .col {
+	padding: 10px;
+}
+
+.stocktake-wrapper .main-table .row .col-location {
+    width: 15%;
+}
+
+.stocktake-wrapper .main-table .row .col-item-code {
+    width: 15%;
+}
+
+.stocktake-wrapper .main-table .row .col-item-name {
+    width: 30%;
+}
+
+.stocktake-wrapper .main-table .row .col-batch {
+    width: 5%;
+}
+
+.stocktake-wrapper .main-table .row .col-expiry-date {
+    width: 15%;
+	text-align: right;
+}
+
+.stocktake-wrapper .main-table .row .col-packsize {
+    width: 5%;
+    text-align: right;
+}
+
+.stocktake-wrapper .main-table .row .col-actual-stock {
+    width: 15%;
+	text-align: right;
+}
