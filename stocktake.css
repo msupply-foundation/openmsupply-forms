@@ -1,9 +1,15 @@
+@media print{
+    @page {
+        size: portrait
+    }
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding: 30px;
+    padding: 0 25px 0 20px;
 }
 
 .bold {
@@ -18,7 +24,7 @@
 
 .stocktake-wrapper {
     max-width: 100%;
-    width: 800px;
+    width: 900px;
 }
 
 .stocktake-wrapper .main-table .table-header {
@@ -26,7 +32,7 @@
 }
 
 .stocktake-wrapper .main-table .table-header .row {
-	font-size: 14px;
+	font-size: 13px;
 	border-bottom: 0px;	
 }
 
@@ -35,11 +41,11 @@
 }
 
 .stocktake-wrapper .main-table .row .col {
-	padding: 10px;
+	padding: 3px;
 }
 
 .stocktake-wrapper .main-table .row .col-location {
-    width: 15%;
+    width: 10%;
 }
 
 .stocktake-wrapper .main-table .row .col-item-code {
@@ -64,7 +70,12 @@
     text-align: right;
 }
 
+.stocktake-wrapper .main-table .row .col-quantity {
+    width: 10%;
+    text-align: right;
+}
+
 .stocktake-wrapper .main-table .row .col-actual-stock {
-    width: 15%;
+    width: 10%;
 	text-align: right;
 }
