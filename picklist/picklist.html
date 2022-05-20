@@ -1,0 +1,63 @@
+<style>
+    {% include "picklist.css" %}
+</style>
+
+<table class="header_section"> 
+    <tr> 
+        <td class="header_section_field"></td> 
+        <th class="header_section_invoice_field" 
+            style="text-align: right;">Packing Slip: {{ data.invoice.invoiceNumber }}
+        </th>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field"></td>
+        <td id= "date" class="header_section_field">Printed date: 2022-05-19</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field"></td> 
+        <td class="header_section_field">Status: {{ data.invoice.status }}</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field_supp_to">Supplied to: {{ data.invoice.otherPartyName }}</td> 
+        <td class="header_section_field">Entered date: {{ data.invoice.createdDatetime }}</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field_sup_add_label">Kanibahal,Lagankhel</td> 
+        <td class="header_section_field">Our ref: {{ data.invoice.theirReference }}</td>
+    </tr>
+
+    <tr> 
+        <td class="header_section_field_sup_add_label">Lalitpur, Kathmandu, Nepal Opposite NIMS College</td> 
+        <td class="header_section_field"></td>
+    </tr>
+
+</table>
+
+<table class="body_section">
+    <tr>
+        <th class="line_number" style="width: 5%;">Line</th>
+        <th class="location" style="width: 13%;">Location</th>
+        <th class="item_name" style="width: 38%;">Item name</th>
+        <th class="quantity" style="width: 8%;">Quantity</th>
+        <th class="issued" style="width: 5%;">Issued</th>
+        <th class="pack" style="width: 8%;">Pack</th>
+        <th class="batch" style="width: 8%;">Batch</th>
+        <th class="expiry" style="width: 10%;">Expiry</th>
+    </tr>
+    {% for line in data.invoice.lines.nodes -%}
+    <tr>
+        <td class="line_number" style="width: 5%;">{{ loop.index }}</td>
+        <td class="location" style="width: 13%;">{{ line.locationName }}</td>
+        <td class="item_name" style="width: 38%;">{{ line.itemName }}</td>
+        <td class="quantity" style="width: 8%;">{{ line.numberOfPacks }}</td>
+        <td class="issued" style="width: 5%;">___________</td>
+        <td class="pack" style="width: 8%;">{{ line.packSize }}</td>
+        <td class="batch" style="width: 8%;">{{ line.batch }}</td>
+        <td class="expiry" style="width: 10%;">{{ line.batch }}</td>
+    </tr>
+    {%- endfor %}
+</table>
