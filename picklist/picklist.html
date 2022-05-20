@@ -12,7 +12,7 @@
 
     <tr> 
         <td class="header_section_field"></td>
-        <td id= "date" class="header_section_field">Printed date: 2022-05-19</td>
+        <td id= "date" class="header_section_field">Printed date:{{ now() | date(format="%m/%d/%Y") }}</td>
     </tr> 
 
     <tr> 
@@ -22,7 +22,7 @@
 
     <tr> 
         <td class="header_section_field_supp_to">Supplied to: {{ data.invoice.otherPartyName }}</td> 
-        <td class="header_section_field">Entered date: {{ data.invoice.createdDatetime }}</td>
+        <td class="header_section_field">Entered date: {{ data.invoice.createdDatetime | date(format="%m/%d/%Y") }}</td>
     </tr> 
 
     <tr> 
