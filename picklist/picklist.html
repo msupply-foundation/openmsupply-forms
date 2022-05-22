@@ -1,0 +1,52 @@
+<style>
+    {% include "picklist.css" %}
+</style>
+<hr />
+
+<table class="header_supplied_section">
+    <tr> 
+        <td class="header_section_field_left"></td>
+        <td id= "date" class="header_section_field_right"> Printed date: {{ now() | date(format="%m/%d/%Y") }}</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field_left">Supplied to:</td> 
+        <td class="header_section_field_right">Status: {{ data.invoice.status }}</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field_left">{{ data.invoice.otherPartyName }}</td> 
+        <td class="header_section_field_right">Entered date: {{ data.invoice.createdDatetime | date(format="%m/%d/%Y") }}</td>
+    </tr> 
+     
+    <tr> 
+        <td class="header_section_field_left">Lalitpur, Kathmandu, Nepal Opposite NIMS College</td> 
+        <td class="header_section_field_right">Confirmed Date: {{ data.invoice.createdDatetime | date(format="%m/%d/%Y") }}</td>
+    </tr>
+    
+</table>
+
+<table class="body_section" cellpadding="2" cellspacing="0">
+    <tr class="body_column_label">
+        <th class="line_number" style="width: 5%;">Line</th>
+        <th class="location" style="width: 13%;">Location</th>
+        <th class="item_name" style="width: 38%;">Item name</th>
+        <th class="quantity" style="width: 8%;">Quantity</th>
+        <th class="issued" style="width: 5%;">Issued</th>
+        <th class="pack" style="width: 8%;">Pack</th>
+        <th class="batch" style="width: 8%;">Batch</th>
+        <th class="expiry" style="width: 10%;">Expiry</th>
+    </tr>
+    {% for line in data.invoice.lines.nodes -%}
+    <tr class="body_value">
+        <td class="line_number" style="width: 5%;">{{ loop.index }}</td>
+        <td class="location" style="width: 13%;">{{ line.locationName }}</td>
+        <td class="item_name" style="width: 40%;">{{ line.itemName }}</td>
+        <td class="quantity" style="width: 8%;">{{ line.numberOfPacks }}</td>
+        <td class="issued" style="width: 5%;">___________</td>
+        <td class="pack" style="width: 8%;">{{ line.packSize }}</td>
+        <td class="batch" style="width: 8%;">{{ line.batch }}</td>
+        <td class="expiry" style="width: 8%;">{{ line.expiryDate }}</td>
+    </tr>
+    {%- endfor %}
+</table>
