@@ -1,0 +1,85 @@
+<style>
+    {% include "outbound.css" %}
+</style>
+<hr>
+<table class="header_supplied_section">
+    <tr> 
+        <td class="header_section_field_left">Supplied to:</td> 
+        <td class="header_section_field_right">Status: {{ data.invoice.status }}</td>
+    </tr> 
+    
+    <tr> 
+        <td class="header_section_field_left">{{ data.invoice.otherPartyName }}</td> 
+        <td class="header_section_field_right">Our ref: {{ data.invoice.theirReference }}</td>
+    </tr>
+
+        
+    <tr> 
+        <td class="header_section_field_left">Lalitpur, Kathmandu, Nepal Opposite NIMS College</td> 
+        <td class="header_section_field_right">Confirmed Date: {{ data.invoice.createdDatetime | date(format="%m/%d/%Y") }}</td>
+    </tr>
+    
+</table>
+
+<table class="header_date_section">
+    <tr>
+        <td class="header_section_field_left"></td>
+        <td class="header_section_field_right">Printed date: {{ now() | date(format="%m/%d/%Y") }}</td>
+    </tr> 
+
+    <tr> 
+        <td class="header_section_field_left">Invoice Category: Category Value</td>
+        <td id= "date" class="header_section_field_right">Authorized by:</td>
+    </tr>
+
+    <tr> 
+        <td class="header_section_field_left">Comments: {{ data.invoice.comment }}</td>
+        <td class="header_section_field_right">Collected by:</td>
+    </tr> 
+</table>
+
+<body>
+    <table class="body_section" cellpadding="2" cellspacing="0">
+        <tr class="body_column_label">
+            <th class="line_number" style="width: 5%;">Line</th>
+            <th class="item_code" style="width: 7%;">Item code</th>
+            <th class="item_name" style="width: 35%;">Item name</th>
+            <th class="quantity" style="width: 7%;">Quantity</th>
+            <th class="pack" style="width: 5%;">Pack</th>
+            <th class="batch" style="width: 8%;">Batch</th>
+            <th class="expiry" style="width: 8%;">Expiry</th>
+            <th class="sell_price" style="width: 7%;">Sell Price</th>
+            <th class="cost_price" style="width: 7%;">Cost Price</th>
+            <th class="total_extension" style="width: 9%;">Extension</th>
+        </tr>
+        {% for line in data.invoice.lines.nodes -%}
+        <tr class="body_value">
+            <td class="line_number" style="width: 5%;">{{ loop.index }}</td>
+            <td class="item_code" style="width: 7%;">{{ line.itemCode }}</td>
+            <td class="item_name" style="width: 35%;">{{ line.itemName }}</td>
+            <td class="quantity" style="width: 8%;">{{ line.numberOfPacks }}</td>
+            <td class="pack" style="width: 5%;">{{ line.packSize }}</td>
+            <td class="batch" style="width: 8%;">{{ line.batch }}</td>
+            <td class="expiry" style="width: 8%;">{{ line.expiryDate }}</td>
+            <td class="sell_price" style="width: 7%;">{{ line.sellPricePerPack }}</td>
+            <td class="cost_price" style="width: 7%;">{{ line.costPricePerPack   }}</td>
+            <td class="total_extension" style="width: 9%;">{{ line.numberOfPacks * line.sellPricePerPack }}</td>
+        </tr>
+        {%- endfor %}
+    </table>
+</body>
+
+<table class="body_total_section" cellpadding="2" cellspacing="0">
+    <tr class="body_total_column_label">
+        <th class="line_number" style="width: 5%;"></th>
+        <th class="item_code" style="width: 7%;"></th>
+        <th class="item_name" style="width: 35%;"></th>
+        <th class="quantity" style="width: 7%;"></th>
+        <th class="pack" style="width: 5%;"></th>
+        <th class="batch" style="width: 8%;"></th>
+        <th class="expiry" style="width: 8%;"></th>
+        <th class="sell_price" style="width: 7%;"></th>
+        <th class="cost_price" style="width: 7%;">Total:</th>
+        <th class="total_extension" style="width: 9%;">{{ data.invoice.pricing.totalAfterTax }}</th>
+    </tr>
+</table>
