@@ -3,46 +3,74 @@
         size: portrait
     }
 }
-
-.header_section_field {
-    text-align: right;
-    font-family: Verdana;
-    font-size: xx-small;
-}
-.header_section_invoice_field {
-    text-align: right;
-    font-family: Verdana;
-    font-size: small;
-    font-weight: bold;
-
-}
-.header_section_field_supp_to {
-    text-align: left;
-    font-family: Verdana;
-    font-size: x-small;
-    font-weight: bold;
-}
-.header_section_field_sup_add_label {
-    text-align: left;
-    font-family: Verdana;
-    font-size: xx-small;
+.header_image_section, .header_supplied_section, .header_date_section, .body_section, .body_total_section {
+    margin-left: 8px;
 }
 
-.header_section, .body_section {
-    max-width: 100%;
-    font-family: Verdana;
-    font-size: x-small;
-    width: 690px;
+.header_supplied_section {
+    width: 98%;
+    font-family: Tahoma;
+    font-size: 8pt;
+    border-bottom: 0.5px solid black;
+    padding-top: 1pt;
 } 
-.line_number, .quantity, .issued, .pack, .expiry {
-   font-size: x-small;
-   text-align: right;
-   font-family: Verdana;
+
+.header_image_section {
+    width: 98%;
+    font-family: Tahoma;
+    font-size: 8pt;
+    border-bottom: 0.5px solid black;
+    padding-top: 8pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} 
+
+.header_date_section {
+    width: 98%;
+    font-family: Tahoma;
+    font-size: 8pt;
+    border-bottom: 0.5px solid black;
+    padding-top: 1pt;
 }
 
-.location, .item_name, .batch {
-    font-size: x-small;
+.header_section_field_right {
+    text-align: right;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+
+.header_section_field_left {
     text-align: left;
-    font-family: Verdana;
+    font-family: Tahoma;
+    font-size: 8pt;
 }
 
+.line_number, .quantity, .pack, .expiry{
+    text-align: right;
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+
+.location, .item_name, .batch, .issued {
+    text-align: left;
+    font-family: Tahoma;
+    font-size: 8pt
+}
+
+.body_section, .body_total_section {
+    width: 98%;
+    font-family: Tahoma;
+}
+
+.body_section tr.body_column_label th {
+    border-bottom: 0.5px solid black;
+}
+
+.body_value td {
+    border-bottom: 0.5px solid black;
+}
+
+hr {
+    width: 98%; 
+    margin-left: 8px; 
+    border: 0.1px solid black;
+}
