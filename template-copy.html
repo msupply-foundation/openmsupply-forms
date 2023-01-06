@@ -1,0 +1,410 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body style="margin: 0;font-family: Tahoma;font-size: 14px;">
+	<div 
+    id="p1" 
+    style="overflow: hidden; position: relative; background-color: white; height: 909px;">
+
+<style class="shared-css" type="text/css" >
+	.t {
+		transform-origin: bottom left;
+		z-index: 2;
+		/* position: absolute; */
+		white-space: pre;
+		overflow: visible;
+		line-height: 1.5;
+	}
+	.text-container {
+		white-space: pre;
+	}
+</style>
+	<!-- End shared CSS values -->
+<style type="text/css">
+	/* #t1_1{left:1017px;bottom:806px;letter-spacing:0.21px;} */
+	.header1HLine {
+		margin-left: 45px;
+		margin-right: 51px;		
+	}
+	#invoiceNumberLabel{
+		bottom: 806px;
+		letter-spacing: 00.21px;
+		position: absolute;
+		font-size: 15px;
+		font-family: Tahoma;
+		color: #000;
+		left: 72%;
+		text-align: right;
+	}
+
+	#invoicePageNumber {
+		/* left: 1250px; */
+		bottom: 781px;
+		letter-spacing: 00.21px;
+		word-spacing:0.03px;
+		left: 91%;
+		text-align: right;
+		font-family: Tahoma;
+		position: absolute;
+	}
+
+	#status{
+		bottom: 700px;
+		letter-spacing: -0.11px;
+		position: absolute;
+		word-spacing:-0.01px;
+		text-align: right;
+		line-height: 40px;
+		align-items: flex-end;
+		width: 91%;
+	}
+
+	#suppliedTo {
+		left: 46px;
+		bottom: 700px;
+		letter-spacing:-0.11px;
+		word-spacing:-0.01px;
+		position: absolute;
+		line-height: 40px;
+		width: 50%;
+	}
+	#suppliedToName {
+		left: 46px;
+		bottom: 680px;
+		letter-spacing:-0.19px;
+		word-spacing:0.07px;
+		position: absolute;
+		line-height: 30px;
+		width: 50%;
+	}
+	#suppliedToAddress {
+		left: 46px;
+		bottom:650px;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 50%;
+
+	}
+	#invoiceAddressHeader {
+		width: 100%;
+		height: 10%;	
+	}
+	#invoiceRef {
+		bottom: 680px;
+		letter-spacing:-0.19px;
+		word-spacing:0.07px;
+		position: absolute;
+		line-height: 30px;
+		width: 91%;
+		text-align: right;
+	}
+	#invoiceConfirmdate {
+		bottom:650px;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 91%;
+		text-align: right;
+	}
+	#invoicePrintedDate {
+		bottom: 66%;
+		letter-spacing:0.06px;
+		word-spacing:0.03px;
+		position: absolute;
+		line-height: 40px;
+		width: 91%;
+		text-align: right;
+	}
+	#invoiceCategory {
+		left: 46px;
+		bottom: 63%;
+		letter-spacing:-0.11px;
+		word-spacing:-0.01px;
+		position: absolute;
+		line-height: 40px;
+		width: 50%;
+		text-align: left;
+	}
+	#invoiceComment {
+		left: 46px;
+		bottom: 60%;
+		letter-spacing:-0.11px;
+		word-spacing:-0.01px;
+		position: absolute;
+		line-height: 40px;
+		width: 50%;
+		text-align: left;
+
+	}
+	#invoiceAuthorizedBy {
+		bottom: 63%;
+		letter-spacing:0.06px;
+		word-spacing:0.03px;
+		position: absolute;
+		line-height: 40px;
+		width: 91%;
+		text-align: right;
+	}
+	#invoiceCollectedBy{
+		bottom: 60%;
+		letter-spacing:-0.11px;
+		word-spacing:-0.01px;
+		position: absolute;
+		line-height: 40px;
+		width: 91%;
+		text-align: right;
+	}
+	.header2Hline {
+		margin-left: 45px;
+		width: 92%;
+	}
+	
+	#invoiceLineNumber {
+		left: 46px;
+		bottom:56%;
+		letter-spacing:-0.13px;
+		word-spacing:0.06px;
+		line-height: 40px;
+		width: 4%;
+		text-align: right;
+	}
+
+	#invoiceLineItemName{
+		/* left:100px; */
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 50%;
+		text-align: left;
+	}
+	#invoiceLineQuan{
+		left:	34%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: right;
+	}
+	#invoiceLinePack{
+		left:	40%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: right;
+	}
+	#invoiceLineBatch{
+		left:	64%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: left;
+	}
+	#invoiceLineExpiry{
+		left:	54%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: right;
+	}
+	#invoiceLinePrice{
+		left:	60%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: right;
+	}
+	#invoiceLineExtension{
+		left:68%;
+		bottom:56%;
+		letter-spacing:-0.18px;
+		word-spacing:0.06px;
+		position: absolute;
+		line-height: 40px;
+		width: 20%;
+		text-align: right;
+	}
+	#invoiceLineBox{
+        /* left: 46px; */
+        bottom: 56%;
+        letter-spacing:-0.11px;
+        word-spacing:-0.01px;
+        position: absolute;
+        line-height: 40px;
+        width: 91%;
+        text-align: right;
+	}
+
+	#lineNumberLabel {
+		text-align: left;
+		width: 4%;
+	}
+	#lineItemNameLabel {
+		text-align: left;
+		width: 40%;
+		padding-left: 10px;
+	}
+	#lineItemQuantityLabel {
+		text-align: right;
+		width: 6%;
+	}
+	#lineItemPackLabel {
+		text-align: right;
+		width: 4%;
+	}
+	#lineItemBatchLabel {
+		text-align: left;
+		width: 12%;
+		padding-left: 10px;
+	}
+	#lineItemExpiryLabel {
+		text-align: left;
+		width: 10%;
+	}
+	#lineItemPriceLabel {
+		text-align: right;
+		width: 8%;
+	}
+	#lineItemExtensionLabel {
+		text-align: right;
+		width: 10%;
+		padding-right: 10px;
+	}
+	#lineItemBoxLabel {
+		text-align: left;
+		width: 6%;
+	}
+
+    #table tr.heading td {
+		border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        font-weight: bold;
+    }
+	#table {
+		/* background-color: cyan; */
+		width: 96%;
+		padding-left: 41px;
+		font-family: Tahoma;
+		font-size: 13px;
+		padding-top: 20px;
+	}
+	#lineNumberRowValue{
+		text-align: right;
+		width: 4%;
+	}
+	#lineItemNameRowValue{
+		text-align: left;
+		width: 50%;
+		padding-left: 10px;
+	}
+	#lineItemQuantityRowValue{
+		text-align: right;
+		width: 6%;
+
+	}
+	#lineItemPackRowValue{
+		text-align: center;
+		width: 3%;
+	}
+	#lineItemBatchRowValue{
+		text-align: left;
+		width: 6%;
+		padding-left: 10px;
+	}
+	#lineItemExpiryRowValue{
+		text-align: left;
+		width: 6%;
+	}
+	#lineItemPriceRowValue{
+		text-align: right;
+		width: 6%;
+	}
+	#lineItemExtensionRowValue{
+		text-align: right;
+		width: 12%;
+		padding-right: 10px;
+	}	
+	#lineItemBoxRowValue{
+		text-align: right;
+		width: 3%;
+	}
+
+</style>
+
+<div class="text-container">
+
+	<div id="invoiceAddressHeader">
+		<img style='display:block; width:10%;' src="{% include "logo_msupply" %}"/>
+		<!-- <img src="/Users/heidi/Documents/GitHub/remote-server/report_builder/example_invoice/invitech.jpg" alt=""> -->
+		<hr class="header1HLine">
+		<span id="invoiceNumberLabel" ><b>Invoice #: {{ data.invoice.invoiceNumber}}</b></span>
+		<span id="invoicePageNumber">Page 1 of 1 </span>
+	</div>
+	<div id="Header2">
+		<span id="suppliedTo">Supplied to:</span>
+		<span id="suppliedToName">{{ data.invoice.otherPartyName}}</span>
+		<hr class="header2Hline"/>
+		<span id="suppliedToAddress">Don't see this address coming easily need to check</span>
+		<span id="status">Status: {{ data.invoice.status }}</span>
+		<!-- <hr class="header2Hline"/>	 -->
+		<table id="table" cellpadding="0" cellspacing="0">
+			<tr class="heading">
+				<td id="lineNumberLabel">Line</td>
+				<td id="lineItemNameLabel">Item Name</td>
+				<td id="lineItemQuantityLabel">Quan</td>
+				<td id="lineItemPackLabel">Pack</td>
+				<td id="lineItemBatchLabel">Batch</td>
+				<td id="lineItemExpiryLabel">Expiry</td>
+				<td id="lineItemPriceLabel">Sell Price</td>
+				<td id="lineItemExtensionLabel">Extension</td>
+				<td id="lineItemBoxLabel">Cost Price</td>
+			</tr>
+			{% for line in data.invoice.lines.nodes -%}
+			<tr class="bodyValue">
+				<td id="lineNumberRowValue">{{ loop.index }} </td>
+				<td id="lineItemNameRowValue">{{ line.itemName }}</td>
+				<td id="lineItemQuantityRowValue">{{ line.numberOfPacks }}</td>
+				<td id="lineItemPackRowValue">{{ line.packSize }}</td>
+				<td id="lineItemBatchRowValue">{{ line.batch }}</td>
+				<td id="lineItemExpiryRowValue">{{ line.expiryDate }}</td>
+				<td id="lineItemPriceRowValue">{{ line.sellPricePerPack }}</td>
+				<td id="lineItemExtensionRowValue">{{ line.totalAfterTax }}</td>				
+				<td id="lineItemBoxRowValue">{{ line.costPricePerPack }}</td>
+
+			</tr>
+			{%- endfor %}
+		</table>
+	
+		<span id="invoiceRef">Our ref: {{ data.invoice.theirReference }}</span>
+		<span id="invoiceConfirmdate">Confirm Date:2022-05-04[static]</span>   		
+		<span id="invoicePrintedDate">Printed date: 2022-05-04</span>		
+		<span id="invoiceCategory">Static for now: Invoice category:</span>	
+		<span id="invoiceComment">Comment: {{ data.invoice.comment }}</span>	
+		<span id="invoiceAuthorizedBy">Authorized by: [StaticUser]</span>		
+		<span id="invoiceCollectedBy">Collected by: [Staticuser]</span>
+	</div>
+</div>
+</body>
+</html>
